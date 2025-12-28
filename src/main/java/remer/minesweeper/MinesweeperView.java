@@ -159,7 +159,7 @@ public class MinesweeperView extends JFrame
     public void showWinMessage()
     {
         JOptionPane.showMessageDialog(this,
-                "Congradulations! You won!",
+                "Congratulations! You win!",
                 "Victory!!",
                 JOptionPane.INFORMATION_MESSAGE);
     }

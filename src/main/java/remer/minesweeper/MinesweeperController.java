@@ -42,7 +42,7 @@ public class MinesweeperController
         }
     }
 
-    // handle right click on a cell to flag it
+    // handle right-click on a cell to flag it
     public void handleCellRightClick(int row, int col)
     {
         if (model.isGameOver())
