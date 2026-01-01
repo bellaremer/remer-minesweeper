@@ -61,6 +61,40 @@ public class MinesweeperController
         view.updateBoard();
     }
 
+    public void autoFlag()
+    {
+        if (model.isGameOver())
+        {
+            return;
+        }
+
+        model.autoFlag();
+        view.updateBoard();
+    }
+
+    public void autoReveal()
+    {
+        if (model.isGameOver())
+        {
+            return;
+        }
+
+        model.autoReveal();
+        view.updateBoard();
+
+        // check the game status after auto-reveal
+        if (model.isGameOver())
+        {
+            if (model.isGameWon())
+            {
+                view.showWinMessage();
+            } else
+            {
+                view.showLoseMessage();
+            }
+        }
+    }
+
     // get the model so the view can access cell information
     public MinesweeperModel getModel()
     {

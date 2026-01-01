@@ -11,6 +11,8 @@ public class MinesweeperView extends JFrame
     private JButton[][] buttons;
     private JPanel boardPanel;
     private JButton resetButton;
+    private JButton autoFlagButton;
+    private JButton autoRevealButton;
 
     // constructor
     public MinesweeperView(MinesweeperController controller)
@@ -86,8 +88,18 @@ public class MinesweeperView extends JFrame
         resetButton.setFont(new Font("Arial", Font.BOLD, 14));
         resetButton.addActionListener(e -> controller.newGame());
 
+        autoFlagButton = new JButton("Auto Flag");
+        autoFlagButton.setFont(new Font("Arial", Font.BOLD, 14));
+        autoFlagButton.addActionListener(e -> controller.autoFlag());
+
+        autoRevealButton = new JButton("Auto Reveal");
+        autoRevealButton.setFont(new Font("Arial", Font.BOLD, 14));
+        autoRevealButton.addActionListener(e -> controller.autoReveal());
+
         JPanel topPanel = new JPanel();
         topPanel.add(resetButton);
+        topPanel.add(autoFlagButton);
+        topPanel.add(autoRevealButton);
         add(topPanel, BorderLayout.NORTH);
     }
 

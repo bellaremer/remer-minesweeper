@@ -56,4 +56,15 @@ public class Mine
     {
         isFlagged = flagged;
     }
+
+    // create a deep copy of this Mine object
+    public Mine clone()
+    {
+        Mine copy = new Mine();
+        copy.isBomb = this.isBomb;
+        copy.adjacentBombs = this.adjacentBombs;
+        copy.isRevealed = this.isRevealed;
+        copy.isFlagged = this.isFlagged;
+        return copy;
+    }
 }
