@@ -332,8 +332,7 @@ public class MinesweeperModel
                             if (neighbor.isFlagged())
                             {
                                 flaggedCount++;
-                            }
-                            else if (!neighbor.isRevealed())
+                            } else if (!neighbor.isRevealed())
                             {
                                 hiddenCount++;
                             }
@@ -486,16 +485,14 @@ public class MinesweeperModel
                 if (cell.isFlagged())
                 {
                     input[index] = 1.0;
-                }
-                // if cell is revealed, use chart based on adjacent bombs
-                else if (cell.isRevealed())
+                } else if (cell.isRevealed())
                 {
+                    // if cell is revealed, use chart based on adjacent bombs
                     int adjacentBombs = cell.getAdjacentBombs();
                     input[index] = (adjacentBombs + 1) * 0.1;
-                }
-                // otherwise, the value is 0.0
-                else
+                } else
                 {
+                    // otherwise, the value is 0.0
                     input[index] = 0.0;
                 }
 
@@ -523,10 +520,9 @@ public class MinesweeperModel
                 if (cell.isFlagged())
                 {
                     output[index] = 1.0;
-                }
-                // otherwise, value is 0.0
-                else
+                } else
                 {
+                    // otherwise, value is 0.0
                     output[index] = 0.0;
                 }
 
@@ -552,7 +548,7 @@ public class MinesweeperModel
             for (int col = 0; col < cols; col++)
             {
                 copy.board[row][col] = this.board[row][col].clone();
-                }
+            }
         }
         return copy;
     }
