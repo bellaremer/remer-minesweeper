@@ -284,26 +284,8 @@ public class MinesweeperModel
             {
                 Mine cell = board[row][col];
 
-                // skip if the cell is hidden
-                if (!cell.isRevealed())
-                {
-                    continue;
-                }
-
-                // skip if the cell is a bomb
-                if (cell.isBomb())
-                {
-                    continue;
-                }
-
-                // skip if the cell is flagged (shouldn't happen for revealed cells, but just in case)
-                if (cell.isFlagged())
-                {
-                    continue;
-                }
-
-                // skip if the cell has 0 adjacent bombs (empty cell)
-                if (cell.getAdjacentBombs() == 0)
+                // skip if cell is not revealed, a bomb, flagged, or has 0 adjacent bombs
+                if (!cell.isRevealed() || cell.isBomb() || cell.isFlagged() || cell.getAdjacentBombs() == 0)
                 {
                     continue;
                 }
@@ -385,26 +367,8 @@ public class MinesweeperModel
             {
                 Mine cell = board[row][col];
 
-                // skip if cell is not revealed
-                if (!cell.isRevealed())
-                {
-                    continue;
-                }
-
-                // skip if cell is a bomb
-                if (cell.isBomb())
-                {
-                    continue;
-                }
-
-                // skip if cell is flagged
-                if (cell.isFlagged())
-                {
-                    continue;
-                }
-
-                // skip if cell has 0 adjacent bombs
-                if (cell.getAdjacentBombs() == 0)
+                // skip if the cell is hidden, a bomb, flagged, or has 0 adjacent bombs
+                if (!cell.isRevealed() || cell.isBomb() || cell.isFlagged() || cell.getAdjacentBombs() == 0)
                 {
                     continue;
                 }
@@ -490,12 +454,7 @@ public class MinesweeperModel
                     // if cell is revealed, use chart based on adjacent bombs
                     int adjacentBombs = cell.getAdjacentBombs();
                     input[index] = (adjacentBombs + 1) * 0.1;
-                } else
-                {
-                    // otherwise, the value is 0.0
-                    input[index] = 0.0;
                 }
-
                 index++;
             }
         }
@@ -520,12 +479,7 @@ public class MinesweeperModel
                 if (cell.isFlagged())
                 {
                     output[index] = 1.0;
-                } else
-                {
-                    // otherwise, value is 0.0
-                    output[index] = 0.0;
                 }
-
                 index++;
             }
         }
