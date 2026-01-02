@@ -100,7 +100,7 @@ public class MinesweeperView extends JFrame
         {
             for (int col = 0; col < model.getCols(); col++)
             {
-                Mine cell = model.getCell(row, col);
+                Cell cell = model.getCell(row, col);
                 JButton button = buttons[row][col];
 
                 if (cell.isRevealed())
