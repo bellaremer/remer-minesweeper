@@ -11,7 +11,7 @@ public class MinesweeperModel
     private boolean gameOver;
     private boolean gameWon;
     private boolean firstMove;
-    private final Random Random = new Random();
+    private final Random random = new Random();
 
     // constructor
     public MinesweeperModel(int rows, int cols, int numBombs)
@@ -47,8 +47,8 @@ public class MinesweeperModel
         while (bombsPlaced < numBombs)
         {
             // generate random row and column
-            int row = Random.nextInt(rows);
-            int col = Random.nextInt(cols);
+            int row = random.nextInt(rows);
+            int col = random.nextInt(cols);
 
             // only place bomb if this cell doesn't already  have one
             if (!board[row][col].isBomb() && !(row == firstClickRow && col == firstClickCol))
