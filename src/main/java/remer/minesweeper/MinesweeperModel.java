@@ -486,8 +486,32 @@ public class MinesweeperModel
         return output;
     }
 
+    // new method to get the actual locations for training - tells the network where the actual bombs are
+    public double[] toBombOutput()
+    {
+        double[] output = new double[rows * cols];
+        int index = 0;
+
+        // iterate through the board row by row
+        for (int row = 0; row < rows; row++)
+        {
+            for (int col = 0; col < cols; col++)
+            {
+                Mine cell = board[row][col];
+
+                // if the cell IS A BOMB (not just flagged), value is 1.0
+                if (cell.isBomb())
+                {
+                    output[index] = 1.0;
+                }
+                index++;
+            }
+        }
+        return output;
+    }
+
     // create a deep copy of the MinesweeperModel
-    private MinesweeperModel deepCopy()
+    public MinesweeperModel deepCopy()
     {
         MinesweeperModel copy = new MinesweeperModel(this.rows, this.cols, this.numBombs);
 
