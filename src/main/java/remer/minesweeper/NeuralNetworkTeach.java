@@ -108,8 +108,7 @@ public class NeuralNetworkTeach
             {
                 // a flag was added, so auto-reveal
                 original.autoReveal();
-            }
-            else
+            } else
             {
                 // no flag was added, reveal a random cell
                 makeRandomMove(original);
@@ -135,8 +134,7 @@ public class NeuralNetworkTeach
             if (won)
             {
                 gamesWon++;
-            }
-            else
+            } else
             {
                 gamesLost++;
             }
@@ -162,8 +160,7 @@ public class NeuralNetworkTeach
         {
             network.writeToFile("minesweeper_model.nn");
             System.out.println("\nNeural network saved to: minesweeper_model.nn");
-        }
-        catch (IOException e)
+        } catch (IOException e)
         {
             System.err.println("Error saving neural network: " + e.getMessage());
             e.printStackTrace();

@@ -89,7 +89,7 @@ public class NeuralNetworkTest
             double[] output = network.guess(input);
 
             // count flags before placing new ones
-            int flagsBefore = countFlags(game);
+            final int flagsBefore = countFlags(game);
 
             // flag cells where the network is confident there's a bomb
             for (int i = 0; i < output.length; i++)
@@ -118,8 +118,7 @@ public class NeuralNetworkTest
             {
                 // a flag was added, so auto-reveal
                 game.autoReveal();
-            }
-            else
+            } else
             {
                 // no flag was added, reveal a random cell
                 makeRandomMove(game);
@@ -145,8 +144,7 @@ public class NeuralNetworkTest
             if (won)
             {
                 gamesWon++;
-            }
-            else
+            } else
             {
                 gamesLost++;
             }
@@ -171,8 +169,7 @@ public class NeuralNetworkTest
         if ((double) gamesWon / 1000 * 100.0 > 50.0)
         {
             System.out.println("\n✓ SUCCESS! Win rate is > 50%");
-        }
-        else
+        } else
         {
             System.out.println("\n✗ Win rate is <= 50%. More training may be needed.");
         }
@@ -184,8 +181,7 @@ public class NeuralNetworkTest
         {
             NeuralNetworkTest tester = new NeuralNetworkTest("minesweeper_model.nn");
             tester.test();
-        }
-        catch (IOException e)
+        } catch (IOException e)
         {
             System.err.println("Error loading neural network: " + e.getMessage());
             System.err.println("Make sure you run NeuralNetworkTeach first to create the network file.");
