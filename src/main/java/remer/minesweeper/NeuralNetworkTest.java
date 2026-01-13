@@ -144,8 +144,7 @@ public class NeuralNetworkTest
             if (won)
             {
                 gamesWon++;
-            }
-            else
+            } else
             {
                 gamesLost++;
             }
