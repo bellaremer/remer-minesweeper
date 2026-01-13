@@ -85,7 +85,7 @@ public class NeuralNetworkTeach
             MinesweeperModel copy = original.deepCopy();
 
             // count flags before auto-flagging
-            int flagsBefore = countFlags(copy);
+            final int flagsBefore = countFlags(copy);
 
             // auto-flag on the copy
             copy.autoFlag();
