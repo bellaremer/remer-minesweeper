@@ -502,7 +502,7 @@ public class MinesweeperModel
         {
             for (int col = 0; col < cols; col++)
             {
-                Mine cell = board[row][col];
+                Cell cell = board[row][col];
 
                 // if the cell IS A BOMB (not just flagged), value is 1.0
                 if (cell.isBomb())

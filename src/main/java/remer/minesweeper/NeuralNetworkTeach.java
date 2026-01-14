@@ -38,7 +38,7 @@ public class NeuralNetworkTeach
         {
             for (int col = 0; col < model.getCols(); col++)
             {
-                Mine cell = model.getCell(row, col);
+                Cell cell = model.getCell(row, col);
                 if (!cell.isRevealed() && !cell.isFlagged())
                 {
                     availableCells.add(new int[]{row, col});
