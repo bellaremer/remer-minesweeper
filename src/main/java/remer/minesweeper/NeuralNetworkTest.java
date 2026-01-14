@@ -1,5 +1,7 @@
 package remer.minesweeper;
 
+import basicneuralnetwork.NeuralNetwork;
+
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
