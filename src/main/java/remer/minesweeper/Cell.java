@@ -58,9 +58,9 @@ public class Cell
     }
 
     // create a deep copy of this Mine object
-    public Mine clone()
+    public Cell clone()
     {
-        Mine copy = new Mine();
+        Cell copy = new Cell();
         copy.isBomb = this.isBomb;
         copy.adjacentBombs = this.adjacentBombs;
         copy.isRevealed = this.isRevealed;

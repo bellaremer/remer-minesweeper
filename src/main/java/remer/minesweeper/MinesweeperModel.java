@@ -287,7 +287,7 @@ public class MinesweeperModel
         {
             for (int col = 0; col < cols; col++)
             {
-                Mine cell = board[row][col];
+                Cell cell = board[row][col];
 
                 // skip if cell is not revealed, a bomb, flagged, or has 0 adjacent bombs
                 if (!cell.isRevealed() || cell.isBomb() || cell.isFlagged() || cell.getAdjacentBombs() == 0)
@@ -314,7 +314,7 @@ public class MinesweeperModel
 
                         if (isValidCell(newRow, newCol))
                         {
-                            Mine neighbor = board[newRow][newCol];
+                            Cell neighbor = board[newRow][newCol];
 
                             if (neighbor.isFlagged())
                             {
@@ -347,7 +347,7 @@ public class MinesweeperModel
 
                             if (isValidCell(newRow, newCol))
                             {
-                                Mine neighbor = board[newRow][newCol];
+                                Cell neighbor = board[newRow][newCol];
 
                                 // flag if its hidden
                                 if (!neighbor.isRevealed() && !neighbor.isFlagged())
@@ -370,7 +370,7 @@ public class MinesweeperModel
         {
             for (int col = 0; col < cols; col++)
             {
-                Mine cell = board[row][col];
+                Cell cell = board[row][col];
 
                 // skip if the cell is hidden, a bomb, flagged, or has 0 adjacent bombs
                 if (!cell.isRevealed() || cell.isBomb() || cell.isFlagged() || cell.getAdjacentBombs() == 0)
@@ -396,7 +396,7 @@ public class MinesweeperModel
 
                         if (isValidCell(newRow, newCol))
                         {
-                            Mine neighbor = board[newRow][newCol];
+                            Cell neighbor = board[newRow][newCol];
 
                             if (neighbor.isFlagged())
                             {
@@ -448,7 +448,7 @@ public class MinesweeperModel
         {
             for (int col = 0; col < cols; col++)
             {
-                Mine cell = board[row][col];
+                Cell cell = board[row][col];
 
                 // if cell is flagged, value is 1.0
                 if (cell.isFlagged())
@@ -478,7 +478,7 @@ public class MinesweeperModel
         {
             for (int col = 0; col < cols; col++)
             {
-                Mine cell = board[row][col];
+                Cell cell = board[row][col];
 
                 // if the cell has a flag, value is 1.0
                 if (cell.isFlagged())
@@ -501,7 +501,7 @@ public class MinesweeperModel
         copy.gameWon = this.gameWon;
 
         // deep copy the board - clone each Mine object
-        copy.board = new Mine[rows][cols];
+        copy.board = new Cell[rows][cols];
         for (int row = 0; row < rows; row++)
         {
             for (int col = 0; col < cols; col++)
