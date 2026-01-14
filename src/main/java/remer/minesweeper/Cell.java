@@ -1,6 +1,6 @@
 package remer.minesweeper;
 
-public class Mine
+public class Cell
 {
     private boolean isBomb;
     private int adjacentBombs;
@@ -8,7 +8,7 @@ public class Mine
     private boolean isFlagged;
 
     // constructor
-    public Mine()
+    public Cell()
     {
         this.isBomb = false;
         this.adjacentBombs = 0;
