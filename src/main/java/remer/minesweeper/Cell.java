@@ -1,6 +1,6 @@
 package remer.minesweeper;
 
-public class Mine
+public class Cell
 {
     private boolean isBomb;
     private int adjacentBombs;
@@ -8,7 +8,7 @@ public class Mine
     private boolean isFlagged;
 
     // constructor
-    public Mine()
+    public Cell()
     {
         this.isBomb = false;
         this.adjacentBombs = 0;
@@ -58,9 +58,9 @@ public class Mine
     }
 
     // create a deep copy of this Mine object
-    public Mine clone()
+    public Cell clone()
     {
-        Mine copy = new Mine();
+        Cell copy = new Cell();
         copy.isBomb = this.isBomb;
         copy.adjacentBombs = this.adjacentBombs;
         copy.isRevealed = this.isRevealed;
