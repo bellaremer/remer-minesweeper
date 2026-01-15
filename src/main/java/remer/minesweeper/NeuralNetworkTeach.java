@@ -97,7 +97,7 @@ public class NeuralNetworkTeach
 
             // get two arrays, original.toInput() and copy.toOutput()
             double[] input = original.toInput();
-            double[] output = copy.toBombOutput();  // use bomb locations, not flag locations
+            double[] output = copy.toOutput();  // use bomb locations, not flag locations
 
             // train the network with this example
             network.train(input, output);
